@@ -18,6 +18,11 @@
         <servlet-name>myservlet</servlet-name>
         <servlet-class>com.practice.MyServlet</servlet-class>
     </servlet>  
+    
+     <servlet>
+        <servlet-name>register</servlet-name>
+        <servlet-class>com.practice.RegisterServlet</servlet-class>
+    </servlet>  
  
     <!--mapping-->
     <servlet-mapping>
@@ -33,6 +38,14 @@
         <servlet-name>myservlet</servlet-name>
         <url-pattern>/myservlet</url-pattern>
     </servlet-mapping>
+    
+    <servlet-mapping>
+        <servlet-name>register</servlet-name>
+        <url-pattern>/RegisterServlet</url-pattern>
+    </servlet-mapping>
+    
+    
+    
     <session-config>
         <session-timeout>
             30

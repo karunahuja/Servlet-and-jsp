@@ -9,10 +9,83 @@ and open the template in the editor.
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .container{
+                width:40%;
+                border:2px solid red;
+                
+            }
+            
+            </style>
+        <title>Form</title>
     </head>
     <body>
-        <div>Karun</div>
-        <h1>First Project</h1>
-        
+        <div class="container">
+        <h1>My Form</h1>
+        <form action="RegisterServlet" method="post">
+            <table>
+                <tr>
+                    <td>
+                        Enter name
+                    </td>
+                    <td>
+                        <input type="text" name="user_name" >
+                    </td>
+                </tr>
+                                <tr>
+                    <td>
+                        Enter password
+                    </td>
+                    <td>
+                        <input type="password" name="user_password" >
+                    </td>
+                </tr>
+                  <tr>
+                    <td>
+                        Enter email
+                    </td>
+                    <td>
+                        <input type="text" name="user_email" >
+                    </td>
+                </tr>
+                                <tr>
+                    <td>
+                        select gender
+                    </td>
+                    <td>
+                        <input type="radio" name="user_gender" value="Male" >
+                        <input type="radio" name="user_gender" value="Female">
+                    </td>
+                </tr>
+                                <tr>
+                    <td>
+                        Enter course
+                    </td>
+                    <td>
+                        <select name="user_course">
+                            <option value="Java">Java</option>
+                            <option value="Python">Python</option>
+                            <option value="php">php</option>
+                            <option value="android">android</option>
+                            
+                            
+                            
+                        </select>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <input type="checkbox" value="checked" name="condition"/>
+                        
+                    </td>
+                    <td>
+                        <button type="submit">Register</button>
+                        <button type="reset">Reset</button>
+                    </td>
+                </tr>
+            </table>
+        </form> 
+        </div>
     </body>
 </html>
