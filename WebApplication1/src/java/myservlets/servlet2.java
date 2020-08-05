@@ -41,7 +41,7 @@ public class servlet2 extends HttpServlet {
             out.println("<h1>Servlet servlet2 at " + request.getContextPath() + "</h1>");
             
             out.println("<h1>Welcome to servlet 2");
-            String name =request.getParameter("user");
+            String name =request.getParameter("user_name");
             
             out.println("<h1>Welcome Back "+name);
             
