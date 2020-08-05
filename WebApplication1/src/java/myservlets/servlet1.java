@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.user;
+package myservlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -11,12 +11,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.sql.*;
+import org.omg.PortableServer.IdAssignmentPolicyValue;
+
 /**
  *
  * @author Karun
  */
-public class Register1 extends HttpServlet {
+public class servlet1 extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,30 +36,16 @@ public class Register1 extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Register</title>");            
+            out.println("<title>Servlet servlet1</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet Register at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet servlet1 at " + request.getContextPath() + "</h1>");
+            
             String name=request.getParameter("user_name");
-            String password=request.getParameter("user_password");
-            String email=request.getParameter("user_email");
-        
-            try{
-                Class.forName("com.mysql.jdbc.Driver");
-                Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/youtube","root","KarunAhuja");
-                String q="insert into user(name,password,email) values(?,?,?)";
-                
-             PreparedStatement pstmt= con.prepareStatement(q);
-             
-                pstmt.setString(1, name);
-                pstmt.setString(2, password);
-                pstmt.setString(3, email);
-                out.println("<h1>done</h1>");
-                
-            }
-            catch (Exception e){
-                e.printStackTrace();
-            }
+           out.println("<h1>"+name+"</h1>");
+            
+           out.println("<a href='servlet2?user="+name+"'>Go to second servlet</a>");
+            
             
             out.println("</body>");
             out.println("</html>");
