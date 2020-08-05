@@ -30,7 +30,8 @@ public class RegisterServlet extends HttpServlet{
     String cond=req.getParameter("condition");
     
 //    String cond=RequestDispatcher.getParameter("condition");
-    if(cond.equals("checked")){
+if(cond!=null) {   
+if(cond.equals("checked")){
         
         out.println("<h2>Name:"+name+"</h2>");
         
@@ -41,10 +42,25 @@ public class RegisterServlet extends HttpServlet{
         out.println("<h2>gender:"+gender+"</h2>");
         
         out.println("<h2>Course:"+course+"</h2>");
+        
+        
+        
+//       assume saved to db
+    
+        RequestDispatcher rd=req.getRequestDispatcher("success");
+        rd.forward(req,resp);
+    
     }
     else{
         out.println("COnditions unaccepeted");
-    }
+}}
+else
+{
+        
+           out.println("COnditions unaccepeted"); 
+        RequestDispatcher rd=req.getRequestDispatcher("index.html");
+        rd.include(req,resp);
+                }
     
 //To change body of generated methods, choose Tools | Templates.
     }
