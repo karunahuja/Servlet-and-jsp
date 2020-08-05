@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -41,16 +42,33 @@ public class s2 extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet s2 at " + request.getContextPath() + "</h1>");
-           
-            int nn1=Integer.parseInt(request.getParameter("n1"));
-            int nn2=Integer.parseInt(request.getParameter("n2"));
-        
-        int p=nn1*nn2;
-        int sum=(int) request.getAttribute("sum");
-        out.println("<h1>");
-        out.println("Sum is="+sum);
-        out.println("Product is ="+p);
-        out.println("</h1>");
+
+            
+
+            Cookie[] cookies= request.getCookies();
+            
+            boolean f=false;
+String name="";
+if(cookies==null){
+    out.println("<h2>You are new user</h2>");
+    return;
+    
+}
+else{
+    
+    for(Cookie c:cookies){
+        String tname=c.getName();
+        if(tname.equals("user_name")){
+            f=true;
+            name=c.getValue();
+            
+        }
+    }
+}
+                  if(f){            out.println("<h1>Hello"+name+"Welcome</h1>");
+                  }
+            
+
          out.println("</body>");
             out.println("</html>");
         

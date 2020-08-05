@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -40,16 +41,14 @@ public class s1 extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet s1 at " + request.getContextPath() + "</h1>");
-            String n1=request.getParameter("n1");
-            String n2=request.getParameter("n2");
+            String name=request.getParameter("name");
             
-            int nn1=Integer.parseInt(n1);
-            int nn2=Integer.parseInt(n2);
-            int s=nn1+nn2;
-            request.setAttribute("sum",s);
-            RequestDispatcher rd=request.getRequestDispatcher("s2");
-            rd.forward(request, response);
-
+            out.println("<h1>Hello"+name+"Welcome</h1>");
+            out.println("<h1><a href='s2' >Go to s2 </a></h1>");
+            
+            Cookie c=new Cookie("user_name",name);
+            
+response.addCookie(c);
             out.println("</body>");
             out.println("</html>");
         }
