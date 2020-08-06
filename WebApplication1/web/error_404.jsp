@@ -10,7 +10,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Sorry Something Went wrong</title>
+        <title>Page not found</title>
                 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
 
     </head>
@@ -18,7 +18,7 @@
         
         <div class="container">
             <img src="https://source.unsplash.com/random/200/200" class=""img-fluid"/>
-        <h1>Sorry Something Went wrong</h1>
+        <h1>Sorry Page not found</h1>
         </div>
         <%=exception%>
         
