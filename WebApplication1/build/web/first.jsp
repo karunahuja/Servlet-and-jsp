@@ -6,10 +6,10 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
 <%@page import="java.util.Random,java.util.ArrayList,java.io.*" %>
-<%@page isErrorPage="true"%>
+<%@page errorPage="error.jsp"%>
 <%@page session="false"%>
+
 <%--<%@page exyends=""%>--%>
 
 
@@ -64,6 +64,18 @@
                <h2>This is true block</h2>  
                </c:if>
            
-            <h1>Sum is <%=doSum()%> </h1>   
+           <%!
+               int n1=23;
+               int n2=0;
+               %>
+               <%
+                   int division=n1/n2;
+                   
+                   %>
+               
+              <%= division
+%>
+
+<h1>Sum is <%=doSum()%> </h1>   
     </body>
 </html>
