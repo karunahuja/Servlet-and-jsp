@@ -16,5 +16,6 @@
     <body>
         <h1>Hello World!</h1>
         <t:mytag></t:mytag>
+        <t:printTable number="23"></t:printTable> 
     </body>
 </html>
