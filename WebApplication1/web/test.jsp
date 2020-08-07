@@ -1,7 +1,6 @@
-
 <%-- 
-    Document   : page3
-    Created on : 6 Aug, 2020, 4:35:46 PM
+    Document   : test
+    Created on : 7 Aug, 2020, 8:20:49 AM
     Author     : Karun
 --%>
 
@@ -13,7 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Page3</h1>
+        <h1>Hello World!</h1>
+          <h1><c:out value="${i}}"></c:out></h1>
     </body>
 </html>
-
