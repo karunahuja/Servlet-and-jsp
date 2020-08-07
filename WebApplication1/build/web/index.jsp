@@ -4,6 +4,7 @@
     Author     : Karun
 --%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -57,9 +58,17 @@
             
         </c:forEach>
          
+         
+        <c:set var="name" value="Karun ahuja"></c:set>   
+        <h1>
+            Length of name is <c:out value="${fn:length(name)}"></c:out></h1>
+       
+        <c:out value="${fn:toLowerCase(name)}"></c:out>
+        <c:out value="${fn:contains(name,'India')}"></c:out>
+    
+    </h1>
             
-            
-        <c:redirect url=""></c:redirect>     
+        <%--<c:redirect url=""></c:redirect>--%>     
             
     </body>
 </html>
